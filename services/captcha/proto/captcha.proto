@@ -1,0 +1,15 @@
+syntax = "proto3";
+package captcha;
+option go_package = "./proto;captcha";
+
+message CapRequest{
+
+}
+
+message CapResponse{
+  bytes data = 1;
+}
+
+service GetCaptcha{
+  rpc Call(CapRequest)returns(CapResponse){}
+}
