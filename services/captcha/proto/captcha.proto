@@ -7,7 +7,9 @@ message CapRequest{
 }
 
 message CapResponse{
-  bytes data = 1;
+  string ImgId = 1;
+  string ImgUrl = 2;
+  bytes ImgData = 3;
 }
 
 service GetCaptcha{
