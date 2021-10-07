@@ -8,8 +8,14 @@ message CapRequest{
 
 message CapResponse{
   string ImgId = 1;
-  string ImgUrl = 2;
-  bytes ImgData = 3;
+}
+
+message ImgRequest{
+  string Id = 1;
+}
+
+message ImgResponse{
+  bytes Data = 1;
 }
 
 message VRequest{
@@ -22,6 +28,7 @@ message VResponse{
 }
 
 service GetCaptcha{
-  rpc Call(CapRequest)returns(CapResponse){}
+  rpc Code(CapRequest)returns(CapResponse){}
+  rpc Img(ImgRequest)returns(ImgResponse){}
   rpc Validate(VRequest)returns(VResponse){}
 }

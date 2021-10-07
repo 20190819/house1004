@@ -11,8 +11,9 @@ func main() {
 		c.Writer.WriteString("go web 项目开始啦 ！")
 	})
 	var cc controllers.CaptchaController
-	r.GET("/api/v1/captcha", cc.GetCaptcha)
-	r.GET("/api/v1/captcha/verify", cc.Verify)
+	r.GET("/api/v1/captcha/cd", cc.GetCaptchaCd)
+	r.GET("/api/v1/captcha/:id/img", cc.GetCaptchaImg)
+	r.POST("/api/v1/captcha/:id/verify", cc.Verify)
 
 	err := r.Run(":8888")
 	if err != nil {

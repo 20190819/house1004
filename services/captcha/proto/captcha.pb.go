@@ -67,9 +67,7 @@ type CapResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ImgId   string `protobuf:"bytes,1,opt,name=ImgId,proto3" json:"ImgId,omitempty"`
-	ImgUrl  string `protobuf:"bytes,2,opt,name=ImgUrl,proto3" json:"ImgUrl,omitempty"`
-	ImgData []byte `protobuf:"bytes,3,opt,name=ImgData,proto3" json:"ImgData,omitempty"`
+	ImgId string `protobuf:"bytes,1,opt,name=ImgId,proto3" json:"ImgId,omitempty"`
 }
 
 func (x *CapResponse) Reset() {
@@ -111,16 +109,96 @@ func (x *CapResponse) GetImgId() string {
 	return ""
 }
 
-func (x *CapResponse) GetImgUrl() string {
+type ImgRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id string `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+}
+
+func (x *ImgRequest) Reset() {
+	*x = ImgRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_captcha_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ImgRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ImgRequest) ProtoMessage() {}
+
+func (x *ImgRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_captcha_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ImgRequest.ProtoReflect.Descriptor instead.
+func (*ImgRequest) Descriptor() ([]byte, []int) {
+	return file_proto_captcha_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *ImgRequest) GetId() string {
 	if x != nil {
-		return x.ImgUrl
+		return x.Id
 	}
 	return ""
 }
 
-func (x *CapResponse) GetImgData() []byte {
+type ImgResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Data []byte `protobuf:"bytes,1,opt,name=Data,proto3" json:"Data,omitempty"`
+}
+
+func (x *ImgResponse) Reset() {
+	*x = ImgResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_captcha_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ImgResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ImgResponse) ProtoMessage() {}
+
+func (x *ImgResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_captcha_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ImgResponse.ProtoReflect.Descriptor instead.
+func (*ImgResponse) Descriptor() ([]byte, []int) {
+	return file_proto_captcha_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *ImgResponse) GetData() []byte {
 	if x != nil {
-		return x.ImgData
+		return x.Data
 	}
 	return nil
 }
@@ -137,7 +215,7 @@ type VRequest struct {
 func (x *VRequest) Reset() {
 	*x = VRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_captcha_proto_msgTypes[2]
+		mi := &file_proto_captcha_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -150,7 +228,7 @@ func (x *VRequest) String() string {
 func (*VRequest) ProtoMessage() {}
 
 func (x *VRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_captcha_proto_msgTypes[2]
+	mi := &file_proto_captcha_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -163,7 +241,7 @@ func (x *VRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VRequest.ProtoReflect.Descriptor instead.
 func (*VRequest) Descriptor() ([]byte, []int) {
-	return file_proto_captcha_proto_rawDescGZIP(), []int{2}
+	return file_proto_captcha_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *VRequest) GetId() string {
@@ -191,7 +269,7 @@ type VResponse struct {
 func (x *VResponse) Reset() {
 	*x = VResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_captcha_proto_msgTypes[3]
+		mi := &file_proto_captcha_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -204,7 +282,7 @@ func (x *VResponse) String() string {
 func (*VResponse) ProtoMessage() {}
 
 func (x *VResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_captcha_proto_msgTypes[3]
+	mi := &file_proto_captcha_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -217,7 +295,7 @@ func (x *VResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VResponse.ProtoReflect.Descriptor instead.
 func (*VResponse) Descriptor() ([]byte, []int) {
-	return file_proto_captcha_proto_rawDescGZIP(), []int{3}
+	return file_proto_captcha_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *VResponse) GetRes() bool {
@@ -232,27 +310,31 @@ var File_proto_captcha_proto protoreflect.FileDescriptor
 var file_proto_captcha_proto_rawDesc = []byte{
 	0x0a, 0x13, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x63, 0x61, 0x70, 0x74, 0x63, 0x68, 0x61, 0x2e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x07, 0x63, 0x61, 0x70, 0x74, 0x63, 0x68, 0x61, 0x22, 0x0c,
-	0x0a, 0x0a, 0x43, 0x61, 0x70, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x55, 0x0a, 0x0b,
+	0x0a, 0x0a, 0x43, 0x61, 0x70, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x23, 0x0a, 0x0b,
 	0x43, 0x61, 0x70, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x49,
 	0x6d, 0x67, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x49, 0x6d, 0x67, 0x49,
-	0x64, 0x12, 0x16, 0x0a, 0x06, 0x49, 0x6d, 0x67, 0x55, 0x72, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x06, 0x49, 0x6d, 0x67, 0x55, 0x72, 0x6c, 0x12, 0x18, 0x0a, 0x07, 0x49, 0x6d, 0x67,
-	0x44, 0x61, 0x74, 0x61, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0c, 0x52, 0x07, 0x49, 0x6d, 0x67, 0x44,
-	0x61, 0x74, 0x61, 0x22, 0x30, 0x0a, 0x08, 0x56, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
-	0x0e, 0x0a, 0x02, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x64, 0x12,
-	0x14, 0x0a, 0x05, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05,
-	0x56, 0x61, 0x6c, 0x75, 0x65, 0x22, 0x1d, 0x0a, 0x09, 0x56, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x12, 0x10, 0x0a, 0x03, 0x52, 0x65, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52,
-	0x03, 0x52, 0x65, 0x73, 0x32, 0x76, 0x0a, 0x0a, 0x47, 0x65, 0x74, 0x43, 0x61, 0x70, 0x74, 0x63,
-	0x68, 0x61, 0x12, 0x33, 0x0a, 0x04, 0x43, 0x61, 0x6c, 0x6c, 0x12, 0x13, 0x2e, 0x63, 0x61, 0x70,
+	0x64, 0x22, 0x1c, 0x0a, 0x0a, 0x49, 0x6d, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
+	0x0e, 0x0a, 0x02, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x64, 0x22,
+	0x21, 0x0a, 0x0b, 0x49, 0x6d, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12,
+	0x0a, 0x04, 0x44, 0x61, 0x74, 0x61, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0c, 0x52, 0x04, 0x44, 0x61,
+	0x74, 0x61, 0x22, 0x30, 0x0a, 0x08, 0x56, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e,
+	0x0a, 0x02, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x49, 0x64, 0x12, 0x14,
+	0x0a, 0x05, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x56,
+	0x61, 0x6c, 0x75, 0x65, 0x22, 0x1d, 0x0a, 0x09, 0x56, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x12, 0x10, 0x0a, 0x03, 0x52, 0x65, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52, 0x03,
+	0x52, 0x65, 0x73, 0x32, 0xaa, 0x01, 0x0a, 0x0a, 0x47, 0x65, 0x74, 0x43, 0x61, 0x70, 0x74, 0x63,
+	0x68, 0x61, 0x12, 0x33, 0x0a, 0x04, 0x43, 0x6f, 0x64, 0x65, 0x12, 0x13, 0x2e, 0x63, 0x61, 0x70,
 	0x74, 0x63, 0x68, 0x61, 0x2e, 0x43, 0x61, 0x70, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
 	0x14, 0x2e, 0x63, 0x61, 0x70, 0x74, 0x63, 0x68, 0x61, 0x2e, 0x43, 0x61, 0x70, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x33, 0x0a, 0x08, 0x56, 0x61, 0x6c, 0x69, 0x64,
-	0x61, 0x74, 0x65, 0x12, 0x11, 0x2e, 0x63, 0x61, 0x70, 0x74, 0x63, 0x68, 0x61, 0x2e, 0x56, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x12, 0x2e, 0x63, 0x61, 0x70, 0x74, 0x63, 0x68, 0x61,
-	0x2e, 0x56, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x11, 0x5a, 0x0f,
-	0x2e, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x3b, 0x63, 0x61, 0x70, 0x74, 0x63, 0x68, 0x61, 0x62,
-	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x32, 0x0a, 0x03, 0x49, 0x6d, 0x67, 0x12, 0x13,
+	0x2e, 0x63, 0x61, 0x70, 0x74, 0x63, 0x68, 0x61, 0x2e, 0x49, 0x6d, 0x67, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x14, 0x2e, 0x63, 0x61, 0x70, 0x74, 0x63, 0x68, 0x61, 0x2e, 0x49, 0x6d,
+	0x67, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x33, 0x0a, 0x08, 0x56,
+	0x61, 0x6c, 0x69, 0x64, 0x61, 0x74, 0x65, 0x12, 0x11, 0x2e, 0x63, 0x61, 0x70, 0x74, 0x63, 0x68,
+	0x61, 0x2e, 0x56, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x12, 0x2e, 0x63, 0x61, 0x70,
+	0x74, 0x63, 0x68, 0x61, 0x2e, 0x56, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
+	0x42, 0x11, 0x5a, 0x0f, 0x2e, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x3b, 0x63, 0x61, 0x70, 0x74,
+	0x63, 0x68, 0x61, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -267,20 +349,24 @@ func file_proto_captcha_proto_rawDescGZIP() []byte {
 	return file_proto_captcha_proto_rawDescData
 }
 
-var file_proto_captcha_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_proto_captcha_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_proto_captcha_proto_goTypes = []interface{}{
 	(*CapRequest)(nil),  // 0: captcha.CapRequest
 	(*CapResponse)(nil), // 1: captcha.CapResponse
-	(*VRequest)(nil),    // 2: captcha.VRequest
-	(*VResponse)(nil),   // 3: captcha.VResponse
+	(*ImgRequest)(nil),  // 2: captcha.ImgRequest
+	(*ImgResponse)(nil), // 3: captcha.ImgResponse
+	(*VRequest)(nil),    // 4: captcha.VRequest
+	(*VResponse)(nil),   // 5: captcha.VResponse
 }
 var file_proto_captcha_proto_depIdxs = []int32{
-	0, // 0: captcha.GetCaptcha.Call:input_type -> captcha.CapRequest
-	2, // 1: captcha.GetCaptcha.Validate:input_type -> captcha.VRequest
-	1, // 2: captcha.GetCaptcha.Call:output_type -> captcha.CapResponse
-	3, // 3: captcha.GetCaptcha.Validate:output_type -> captcha.VResponse
-	2, // [2:4] is the sub-list for method output_type
-	0, // [0:2] is the sub-list for method input_type
+	0, // 0: captcha.GetCaptcha.Code:input_type -> captcha.CapRequest
+	2, // 1: captcha.GetCaptcha.Img:input_type -> captcha.ImgRequest
+	4, // 2: captcha.GetCaptcha.Validate:input_type -> captcha.VRequest
+	1, // 3: captcha.GetCaptcha.Code:output_type -> captcha.CapResponse
+	3, // 4: captcha.GetCaptcha.Img:output_type -> captcha.ImgResponse
+	5, // 5: captcha.GetCaptcha.Validate:output_type -> captcha.VResponse
+	3, // [3:6] is the sub-list for method output_type
+	0, // [0:3] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -317,7 +403,7 @@ func file_proto_captcha_proto_init() {
 			}
 		}
 		file_proto_captcha_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*VRequest); i {
+			switch v := v.(*ImgRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -329,6 +415,30 @@ func file_proto_captcha_proto_init() {
 			}
 		}
 		file_proto_captcha_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ImgResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_captcha_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*VRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_captcha_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*VResponse); i {
 			case 0:
 				return &v.state
@@ -347,7 +457,7 @@ func file_proto_captcha_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_captcha_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -373,7 +483,8 @@ const _ = grpc.SupportPackageIsVersion6
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type GetCaptchaClient interface {
-	Call(ctx context.Context, in *CapRequest, opts ...grpc.CallOption) (*CapResponse, error)
+	Code(ctx context.Context, in *CapRequest, opts ...grpc.CallOption) (*CapResponse, error)
+	Img(ctx context.Context, in *ImgRequest, opts ...grpc.CallOption) (*ImgResponse, error)
 	Validate(ctx context.Context, in *VRequest, opts ...grpc.CallOption) (*VResponse, error)
 }
 
@@ -385,9 +496,18 @@ func NewGetCaptchaClient(cc grpc.ClientConnInterface) GetCaptchaClient {
 	return &getCaptchaClient{cc}
 }
 
-func (c *getCaptchaClient) Call(ctx context.Context, in *CapRequest, opts ...grpc.CallOption) (*CapResponse, error) {
+func (c *getCaptchaClient) Code(ctx context.Context, in *CapRequest, opts ...grpc.CallOption) (*CapResponse, error) {
 	out := new(CapResponse)
-	err := c.cc.Invoke(ctx, "/captcha.GetCaptcha/Call", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/captcha.GetCaptcha/Code", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *getCaptchaClient) Img(ctx context.Context, in *ImgRequest, opts ...grpc.CallOption) (*ImgResponse, error) {
+	out := new(ImgResponse)
+	err := c.cc.Invoke(ctx, "/captcha.GetCaptcha/Img", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -405,7 +525,8 @@ func (c *getCaptchaClient) Validate(ctx context.Context, in *VRequest, opts ...g
 
 // GetCaptchaServer is the server API for GetCaptcha service.
 type GetCaptchaServer interface {
-	Call(context.Context, *CapRequest) (*CapResponse, error)
+	Code(context.Context, *CapRequest) (*CapResponse, error)
+	Img(context.Context, *ImgRequest) (*ImgResponse, error)
 	Validate(context.Context, *VRequest) (*VResponse, error)
 }
 
@@ -413,8 +534,11 @@ type GetCaptchaServer interface {
 type UnimplementedGetCaptchaServer struct {
 }
 
-func (*UnimplementedGetCaptchaServer) Call(context.Context, *CapRequest) (*CapResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Call not implemented")
+func (*UnimplementedGetCaptchaServer) Code(context.Context, *CapRequest) (*CapResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Code not implemented")
+}
+func (*UnimplementedGetCaptchaServer) Img(context.Context, *ImgRequest) (*ImgResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Img not implemented")
 }
 func (*UnimplementedGetCaptchaServer) Validate(context.Context, *VRequest) (*VResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Validate not implemented")
@@ -424,20 +548,38 @@ func RegisterGetCaptchaServer(s *grpc.Server, srv GetCaptchaServer) {
 	s.RegisterService(&_GetCaptcha_serviceDesc, srv)
 }
 
-func _GetCaptcha_Call_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _GetCaptcha_Code_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CapRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GetCaptchaServer).Call(ctx, in)
+		return srv.(GetCaptchaServer).Code(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/captcha.GetCaptcha/Call",
+		FullMethod: "/captcha.GetCaptcha/Code",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GetCaptchaServer).Call(ctx, req.(*CapRequest))
+		return srv.(GetCaptchaServer).Code(ctx, req.(*CapRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _GetCaptcha_Img_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ImgRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GetCaptchaServer).Img(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/captcha.GetCaptcha/Img",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GetCaptchaServer).Img(ctx, req.(*ImgRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -465,8 +607,12 @@ var _GetCaptcha_serviceDesc = grpc.ServiceDesc{
 	HandlerType: (*GetCaptchaServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "Call",
-			Handler:    _GetCaptcha_Call_Handler,
+			MethodName: "Code",
+			Handler:    _GetCaptcha_Code_Handler,
+		},
+		{
+			MethodName: "Img",
+			Handler:    _GetCaptcha_Img_Handler,
 		},
 		{
 			MethodName: "Validate",
