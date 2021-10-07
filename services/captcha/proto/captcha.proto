@@ -12,6 +12,16 @@ message CapResponse{
   bytes ImgData = 3;
 }
 
+message VRequest{
+  string Id = 1;
+  string Value = 2;
+}
+
+message VResponse{
+  bool Res = 1;
+}
+
 service GetCaptcha{
   rpc Call(CapRequest)returns(CapResponse){}
+  rpc Validate(VRequest)returns(VResponse){}
 }

@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"bytes"
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"google.golang.org/grpc"
 	pb "house1004/services/captcha/proto"
@@ -10,12 +11,14 @@ import (
 	"time"
 )
 
-func GetCaptcha(ctx *gin.Context) {
+type CaptchaController struct {
+}
+
+func (cc CaptchaController) GetCaptcha(ctx *gin.Context) {
 	conn, err := grpc.Dial(":3000", grpc.WithInsecure())
 	if err != nil {
 		log.Fatalln(err)
 	}
-
 	cli := pb.NewGetCaptchaClient(conn)
 	resp, err := cli.Call(ctx, &pb.CapRequest{})
 	if resp == nil {
@@ -24,4 +27,8 @@ func GetCaptcha(ctx *gin.Context) {
 	}
 	ctx.Writer.Header().Set("Content-Type", "image/png")
 	http.ServeContent(ctx.Writer, &http.Request{}, "a.png", time.Time{}, bytes.NewReader(resp.ImgData))
+}
+
+func (cc CaptchaController) Verify(ctx *gin.Context) {
+	fmt.Println("cc")
 }
