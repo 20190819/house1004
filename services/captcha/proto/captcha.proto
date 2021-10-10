@@ -1,0 +1,34 @@
+syntax = "proto3";
+package captcha;
+option go_package = "./proto;captcha";
+
+message CapRequest{
+
+}
+
+message CapResponse{
+  string ImgId = 1;
+}
+
+message ImgRequest{
+  string Id = 1;
+}
+
+message ImgResponse{
+  bytes Data = 1;
+}
+
+message VRequest{
+  string Id = 1;
+  string Value = 2;
+}
+
+message VResponse{
+  bool Res = 1;
+}
+
+service GetCaptcha{
+  rpc Code(CapRequest)returns(CapResponse){}
+  rpc Img(ImgRequest)returns(ImgResponse){}
+  rpc Validate(VRequest)returns(VResponse){}
+}
