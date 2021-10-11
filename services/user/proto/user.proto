@@ -1,0 +1,19 @@
+syntax="proto3";
+package user;
+option go_package="./proto;user";
+
+service User{
+  rpc Register(Request)returns(Response){}
+}
+
+message Request{
+  string Phone=1;
+  string captcha=2;
+  string Password=3;
+  string PasswordConfirm=4;
+}
+
+message Response{
+  
+}
+
