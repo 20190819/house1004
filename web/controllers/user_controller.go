@@ -35,3 +35,24 @@ func (uc *UserController) HandlerRegister(ctx *gin.Context) {
 		"msg":helpers.SuccessMsg,
 	})
 }
+
+func (uc *UserController) HandlerLogin(ctx *gin.Context){
+	name:=ctx.PostForm("name")
+	password:=ctx.PostForm("password")
+
+	uc.Conn, uc.err = grpc.Dial(services.SrvAddressUser, grpc.WithInsecure())
+	exceptions.Fatal(uc.err)
+
+	cli := pb.NewUserClient(uc.Conn)
+	req:=&pb.LRequest{
+		Name: name,
+		Password: password,
+	}
+	_, err := cli.Login(ctx,req)
+	exceptions.Fatal(err)
+	ctx.JSON(http.StatusOK,gin.H{
+		"code":helpers.SuccessCode,
+		"msg":helpers.SuccessMsg,
+	})
+}
+

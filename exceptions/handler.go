@@ -7,6 +7,7 @@ import (
 
 var (
 	ErrParams = errors.New("参数异常")
+	ErrNotFound = errors.New("数据未找到")
 )
 
 func Fatal(err error) {

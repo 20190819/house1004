@@ -4,16 +4,25 @@ option go_package="./proto;user";
 
 service User{
   rpc Register(Request)returns(Response){}
+  rpc Login(LRequest)returns(LResponse){}
 }
 
 message Request{
   string Phone=1;
-  string captcha=2;
+  string Captcha=2;
   string Password=3;
   string PasswordConfirm=4;
 }
 
 message Response{
   
+}
+message LRequest {
+  string Name=1;
+  string Password=2;
+}
+
+message LResponse{
+
 }
 

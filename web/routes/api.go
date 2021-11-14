@@ -14,5 +14,10 @@ func RegisterApiRoutes(r *gin.Engine){
 		captcha.GET("/cd",cc.GetCaptchaCd)
 		captcha.GET("/:id/img",cc.GetCaptchaImg)
 		captcha.POST("/:id/verify",cc.Verify)
+
+		var uc controllers.UserController
+		user:=api.Group("/user")
+		user.POST("/register",uc.HandlerRegister)
+		user.POST("/login",uc.HandlerLogin)
 	}
 }

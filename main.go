@@ -1,7 +1,6 @@
 package main
 
 import (
-	bootstrap2 "house1004/bootstrap"
 	exceptions "house1004/exceptions"
 	"house1004/web/routes"
 
@@ -9,10 +8,6 @@ import (
 )
 
 func main() {
-	bootstrap2.LoadEnv()
-
-	bootstrap2.ConnectDB()
-	bootstrap2.Migration()
 
 	r := gin.Default()
 	routes.RegisterWebRoutes(r)

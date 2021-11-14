@@ -2,8 +2,7 @@ package bootstrap
 
 import (
 	"fmt"
-	exceptions "house1004/exceptions"
-	"house1004/web/models/user"
+	 "house1004/exceptions"
 	"time"
 
 	"github.com/spf13/viper"
@@ -41,10 +40,4 @@ func pool() {
 	sqlDB.SetMaxOpenConns(100)
 	// SetConnMaxLifetime 设置了连接可复用的最大时间。
 	sqlDB.SetConnMaxLifetime(time.Hour)
-}
-
-// Migration 迁移文件
-func Migration() {
-	err := DB.AutoMigrate(&user.User{})
-	exceptions.Fatal(err)
 }
